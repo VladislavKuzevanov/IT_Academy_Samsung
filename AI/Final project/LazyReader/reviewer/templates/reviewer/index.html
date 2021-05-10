@@ -1,0 +1,92 @@
+<!doctype html>
+{% load static %}
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Lazy Reader</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="{% static 'reviewer/Searching_tool_style.css' %}">
+    <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet">
+    <style>
+    .title {
+      color: white;
+      text-shadow: 2px 2px 4px #000000;
+      margin: 20px;
+      padding: 20px;
+      text-align: center;
+    }
+    .form-group {
+      color: white;
+      text-shadow: 2px 2px 4px #000000;
+      margin: 20px;
+      padding: 20px;
+      text-align: left;
+    }
+    body {
+      background-image: url({% static 'reviewer/wallpaperflare.jpg' %});
+      background-repeat: no-repeat;
+      background-size: cover;
+      background-attachment: fixed;
+    }
+
+    </style>
+    <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+    <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+
+  </head>
+  <body>
+
+    <header class="site-header sticky-top py-1 bg-dark">
+      <nav class="container d-flex flex-column flex-md-row justify-content-between">
+        <a class="py-2 text-white" href="#" aria-label="Home">
+          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="d-block mx-auto" role="img" viewBox="0 0 24 24"><title>Home</title><circle cx="12" cy="12" r="10"></circle><path d="M14.31 8l5.74 9.94M9.69 8h11.48M7.38 12l5.74-9.94M9.69 16L3.95 6.06M14.31 16H2.83m13.79-4l-5.74 9.94"></path></svg>
+        </a>
+        <a class="py-2 d-none d-md-inline-block text-white" href="#">About</a>
+        <a class="py-2 d-none d-md-inline-block text-white" href="#">Features</a>
+        <a class="py-2 d-none d-md-inline-block text-white" href="#">Support</a>
+      </nav>
+    </header>
+
+    <div class="title">
+      <header>
+
+        <h1>AUTOMATIC SUMMARIZATION OF FILMS AND TV SERIES REVIEWS</h1>
+
+      </header>
+    </div>
+
+    <div class="container h-10">
+      <div class="d-flex justify-content-center h-10">
+        <form method="post" action="" enctype="multipart/form-data">
+          {% csrf_token %}
+          <div class="searchbar">
+            <input id="rt_url" class="search_input" type="text" name="rt_url" placeholder="Insert link from website..." required>
+            <a href="#" class="search_icon"><i class="fa fa-search"></i></a>
+          </div>
+        </form>
+      </div>
+    </div>
+
+    <div align="center">
+      <form>
+        <div class="form-group cyan-border-focus w-75">
+          <label for="exampleFormControlTextarea">The general opinion of the audience</label>
+          <textarea class="form-control z-depth-5" id="exampleFormControlTextarea" rows="10" placeholder="Summary will appear here..." style="background-color:#353b48;color:white;">{{ summary }}</textarea>
+        </div>
+      </form>
+    </div>
+
+    <main role="main" class="container" style="height: 150vh">
+      <div class="text-center mt-5 pt-5">
+        <h1>IT ACADEMY SAMSUNG</h1>
+        <h1>FINAL PROJECT</h1>
+        <p class="lead">Completed by students of NRNU MEPhI:</p>
+        <p class="lead">Vladislav Kuzevanov</p>
+        <p class="lead">Polina Efremova</p>
+      </div>
+    </main>
+  </body>
+</html>
