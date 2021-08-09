@@ -4,3 +4,4 @@
 https://myitacademy.ru/o-treke-iskusstvennyj-intellekt/
 
 * [Homeworks](AI/Homeworks)
+* [Final project](AI/Final project)
